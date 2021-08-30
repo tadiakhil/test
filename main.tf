@@ -88,4 +88,3 @@ resource "aws_cloudfront_distribution" "prod_distribution" {
         cloudfront_default_certificate = true
     }
 }
-
