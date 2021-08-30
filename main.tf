@@ -12,6 +12,8 @@ variable "public_key_path" {
 
 provider "aws" {
   region = "${var.aws_region}"
+  access_key = "my-access-key"
+  secret_key = "my-secret-key"
 }
 
 # Note: The bucket name needs to carry the same name as the domain!
