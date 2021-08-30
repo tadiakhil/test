@@ -2,13 +2,13 @@ variable "aws_region" {
   default     = "eu-west-1"
 }
 
+variable "my-access_key" {}
+variable "my-secret_key" {}
+
 variable "domain" {
   default = "my_domain"
 }
 
-variable "public_key_path" {
-  default = "~/.ssh/id_rsa.pub"
-}
 
 provider "aws" {
   region = "${var.aws_region}"
