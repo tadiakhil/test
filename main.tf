@@ -4,7 +4,7 @@ provider "aws" {
   region  = "us-east-1"
 }
 
-resource "aws_s3_bucket" "mybucket" {
+resource "aws_s3_bucket" "mybucket1997bodies" {
     bucket = "${var.bucket_name}"
     acl = "public-read"
 
@@ -40,8 +40,8 @@ EOF
 
 resource "aws_cloudfront_distribution" "distribution" {
     origin {
-        domain_name = "${aws_s3_bucket.mybucket.website_endpoint}"
-        origin_id   = "S3-${aws_s3_bucket.mybucket.bucket}"
+        domain_name = "${aws_s3_bucket.mybucket1997bodies.website_endpoint}"
+        origin_id   = "S3-${aws_s3_bucket.mybucket1997bodies.bucket}"
 
         custom_origin_config  {
             http_port = 80
@@ -63,7 +63,7 @@ resource "aws_cloudfront_distribution" "distribution" {
     default_cache_behavior {
         allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
         cached_methods   = ["GET", "HEAD"]
-        target_origin_id = "S3-${aws_s3_bucket.mybucket.bucket}"
+        target_origin_id = "S3-${aws_s3_bucket.mybucket1997bodies.bucket}"
 
         forwarded_values {
             query_string = true
