@@ -3,7 +3,7 @@ variable "aws_region" {
 }
 
 variable "domain" {
-  default = "my_domain"
+  default = "cdn.akhiltadi.com"
 }
 
 provider "aws" {
