@@ -9,8 +9,6 @@ variable "domain" {
 
 provider "aws" {
   region = "${var.aws_region}"
-  access_key = "AKIAQAVVWUZNDKG624GH"
-  secret_key = "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"
 }
 
 # Note: The bucket name needs to carry the same name as the domain!
