@@ -40,6 +40,7 @@ resource "aws_s3_bucket" "prod_bucket" {
     }]
 }
 EOF }
+
 resource "aws_cloudfront_distribution" "prod_distribution" {
     origin {
         domain_name = "${aws_s3_bucket.prod.website_endpoint}"
